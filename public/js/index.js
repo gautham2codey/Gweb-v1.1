@@ -15,7 +15,7 @@ function loadcustomapp() {
   var description = prompt("What's this app's description? (optional)")
 
   if (!name || !url) return alert('All required fields must be filled in')
-  if (name.length > 15) return alert('App name is too long (max 30 characters)')
+  if (name.length > 15) return alert('App name is too long (30 characters max)')
 
   fetch('https://www.uuidtools.com/api/generate/v4')
     .then((response) => response.json())
@@ -42,7 +42,7 @@ function launchab() {
   stl.left = stl.right = stl.top = stl.bottom = '0'
   iframe.src = self.location
   tab.document.body.appendChild(iframe)
-  window.parent.window.location.replace(localStorage.getItem('panicurl') || 'https://classroom.google.com/h')
+  window.parent.window.location.replace(localStorage.getItem('panicurl') || 'https://gcs.instructure.com')
 }
 
 if (window.self !== window.self) document.querySelector('#launchab').style.display = 'none'
